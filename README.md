@@ -41,12 +41,14 @@ converting the listing's neighborhoods to zipcodes. We achieved this with the he
 Nominatim tool. Found here: https://nominatim.openstreetmap.org/ Each city's data had a similarly formatted
 csv and thus the same cleaning process was performed for each city. Features of note to be cleaned 
 were the amenities, bathrooms, and bedrooms. Outliers were also removed from these categories.
+
 PLEASE NOTE: THE CLEANING NOTEBOOKS HAVE ALREADY BEEN RUN SO THE USER DOESN'T HAVE TO. 
 IF YOU WERE TO RUN THE ZIPCODE NOTEBOOKS THEY COULD TAKE HOURS!!!!!!!!!!!!!!!!!!
 
 For reference, here is the workflow of the cleaning notebooks:
 * data_cleaning_zipcode.ipynb (outputs listings_{city}_zipcode.csv to Resources)
     - data_cleaning.ipynb (outputs cleaned_data_{city}_final.csv to Resources)
+
 This flow is the same for San Diego and Seattle, but for New York, we have hosted the zipcode csv
 in AWS s3 because of file size considerations.
 
