@@ -1,7 +1,7 @@
 # Airbnb Profit Pilot
 
 <p align="center">
-  <img src="https://projec4gtbootcampwebsite.s3.amazonaws.com/assets/img/logo.png" alt="image"/>
+  <img src="https://projec4gtbootcampwebsite.s3.amazonaws.com/assets/img/logo.png" alt="logo" width="600" height="450"/>
 </p>
 
 # Table of Contents
