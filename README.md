@@ -65,15 +65,36 @@ binned in order to reduce noise. Amenities, bathrooms, bedrooms, acccommodates, 
 
 # Machine Learning
 
-## Predicting Price
+### Predicting Price
+
+In order to predict the proper pricing of an airbnb listing we used regression modeling. At first,
+we tried Random Forest, XGBoost, and Neural Network regressors, coming to find that Random Forests
+performed best considering r2 and rMSE calculations.
+
+### Predicting Revenue
+
+We also wanted to give the user insight into how revenue from a listing using our price predictor
+might compare to characteristically similar listings in their city. Therefore, we decided to build 
+a classifier model to predict whether a given price would generate yearly revenue above or below the
+50th percentile. In other words, will this price generate revenue that is above or below the median
+for the city. Random Forest classifier was the best performing model for this situation as seen through 
+good precision for '>50th' classification.
+
+### Model Workflow
+
+* Random_Forest_Regressor_Price.ipynb (at bottome there is joblib write and read of model for testing)
+
+    - Random_Forest_Classifier_Revenue.ipynb (at bottome there is joblib write and read of model for testing)
 
 [(Back to top)](#table-of-contents)
 
 # Deployment
 
 The data used for this project is stored in an AWS s3 bucket, with public access rights via a URL.
-__________ The presentation piece is a static website hosted in a separate AWS s3 bucket with 
-a corresponding URL________.
+The front end prototype and presentation piece is a static website hosted in a separate AWS s3 
+bucket with the following URL: 
+
+http://projec4gtbootcampwebsite.s3-website-us-east-1.amazonaws.com/
 
 [(Back to top)](#table-of-contents)
 
