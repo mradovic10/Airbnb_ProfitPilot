@@ -1,2 +1,96 @@
-# Airbnb_ProfitPilot
-Project 4
+# Airbnb Profit Pilot
+
+# Table of Contents
+
+- [About](#about)
+- [Data Acquisition](#dataacquisition)
+- [Data Cleaning](#datacleaning)
+- [Feature Engineering](#featureengineering)
+- [Machine Learning](#machinelearning)
+- [Deployment](#deployment)
+- [Next Steps](#nextsteps)
+- [Team](#team)
+
+# About
+
+Do you have a vacation home that you want to list on Airbnb, but are unsure of the proper
+listing price that will be competitive and create passive income for you? Look no further
+than Airbnb Profit Pilot! Our machine learning model, given a set amount of inputs about 
+your property (bedrooms, baths, etc.), will generate a competitve price for you in seconds,
+taking the guesswork out of the equation. Our model is based on historical price and features
+from thousands of Airbnb listings. The current offering is available for the cities of San Diego,
+New York City, and Seattle.
+
+[(Back to top)](#table-of-contents)
+
+# Data Acquisition
+
+The data used for this project was compiled by folks at insideairbnb.com through publicly available
+sources. We downloaded the gzipped listings files for each city used and uploaded them to our AWS s3
+bucket for use in our notebooks, via a publicly accessible s3 URL. The data was last updated by 
+insideairbnb on 03/25/2023.
+
+[(Back to top)](#table-of-contents)
+
+# Data Cleaning
+
+The amount of features provided for each listing in the datasets was rather extensive, so a fair
+amount of cleaning was needed in order to create good modeling. This cleaning process was conducted 
+in jupyter notebooks using the pandas library mostly. One of the biggest tasks of this process was 
+converting the listing's neighborhoods to zipcodes. We achieved this with the help of OpenStreetMap's
+Nominatim tool. Found here: https://nominatim.openstreetmap.org/ Each city's data had a similarly formatted
+csv and thus the same cleaning process was performed for each city. Features of note to be cleaned 
+were the amenities, bathrooms, and bedrooms. Outliers were also removed from these categories.
+PLEASE NOTE: THE CLEANING NOTEBOOKS HAVE ALREADY BEEN RUN SO THE USER DOESN'T HAVE TO. 
+IF YOU WERE TO RUN THE ZIPCODE NOTEBOOKS THEY COULD TAKE HOURS!!!!!!!!!!!!!!!!!!
+
+For reference, here is the workflow of the cleaning notebooks:
+* data_cleaning_zipcode.ipynb (outputs listings_{city}_zipcode.csv to Resources)
+    - data_cleaning.ipynb (outputs cleaned_data_{city}_final.csv to Resources)
+This flow is the same for San Diego and Seattle, but for New York, we have hosted the zipcode csv
+in AWS s3 because of file size considerations.
+
+[(Back to top)](#table-of-contents)
+
+# Feature Engineering
+
+Before we could fit our data to an ML model, we needed to engineer the features into appropriate formats.
+The cleaned datasets have both categorical as well as numerical feature data which needed to be dummied
+as well as scaled. Through a PCA analysis we also were able to discern the features which needed to be
+binned in order to reduce noise. Amenities, bathrooms, bedrooms, acccommodates, and minimum nights.
+
+[(Back to top)](#table-of-contents)
+
+# Machine Learning
+
+## Predicting Price
+
+[(Back to top)](#table-of-contents)
+
+# Deployment
+
+The data used for this project is stored in an AWS s3 bucket, with public access rights via a URL.
+__________ The presentation piece is a static website hosted in a separate AWS s3 bucket with 
+a corresponding URL________.
+
+[(Back to top)](#table-of-contents)
+
+# Next Steps
+
+* Add more cities across the US
+* Develop a dynamic website with server side processing of input features to run through our model
+
+[(Back to top)](#table-of-contents)
+
+# Team
+
+* Miodrag Radovic:
+    - https://github.com/mradovic10
+* Negin Kananizadeh
+    - https://github.com/neginkanani
+* Chad Barlow
+    - https://github.com/chadbarlow
+* Reid Walker
+    - https://github.com/rbw9891
+    
+[(Back to top)](#table-of-contents)
