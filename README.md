@@ -84,6 +84,20 @@ a classifier model to predict whether a given price would generate yearly revenu
 for the city. Random Forest classifier was the best performing model for this situation as seen through 
 good precision for '>50th' classification.
 
+### Exploring Review Scores
+
+The team also hypothesized that the review scores could be one of the better predictors of price, revenue,
+and availability. Using Random Forest Classifier, Random Forest Regressor, Isolation Forest, and Logistic 
+Regression we explored this possibility, coming to find that our assumption wasn't correct. While consumers
+use review scores a good amount to compare listings and help choose, these review scores weren't very good
+at predicting how a listing might do monetarily. This may be due to the manner in which insideairbnb.com 
+aggregated availability of Airbnb rentals, thereby minimizing the impact of review scores on our target variables.
+A worthwhile piece of information that was gained through this exploration is that host communication and 
+check-in scores seem to influence Airbnb success the least out of all review types. Their feature 
+importance scores were consistently the lowest in all models.
+
+The notebook files dedicated to this exploration can be found in the “review_scores” of the Machine Learning directory.
+
 ### Model Workflow
 
 * Random_Forest_Regressor_Price.ipynb (at bottome there is joblib write and read of model for testing)
