@@ -84,6 +84,12 @@ a classifier model to predict whether a given price would generate yearly revenu
 for the city. Random Forest classifier was the best performing model for this situation as seen through 
 good precision for '>50th' classification.
 
+### Model Workflow
+
+* Random_Forest_Regressor_Price.ipynb (at bottome there is joblib write and read of model for testing)
+
+    - Random_Forest_Classifier_Revenue.ipynb (at bottome there is joblib write and read of model for testing)
+
 ### Exploring Review Scores
 
 The team also hypothesized that the review scores could be one of the better predictors of price, revenue,
@@ -97,12 +103,6 @@ check-in scores seem to influence Airbnb success the least out of all review typ
 importance scores were consistently the lowest in all models.
 
 The notebook files dedicated to this exploration can be found in the “review_scores” of the Machine Learning directory.
-
-### Model Workflow
-
-* Random_Forest_Regressor_Price.ipynb (at bottome there is joblib write and read of model for testing)
-
-    - Random_Forest_Classifier_Revenue.ipynb (at bottome there is joblib write and read of model for testing)
 
 [(Back to top)](#table-of-contents)
 
