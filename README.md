@@ -49,8 +49,10 @@ were the amenities, bathrooms, and bedrooms. Outliers were also removed from the
 PLEASE NOTE: THE CLEANING NOTEBOOKS HAVE ALREADY BEEN RUN SO THE USER DOESN'T HAVE TO. 
 IF YOU WERE TO RUN THE ZIPCODE NOTEBOOKS THEY COULD TAKE HOURS!!!!!!!!!!!!!!!!!!
 
-For reference, here is the workflow of the cleaning notebooks:
+### Cleaning Workflow
+
 * data_cleaning_zipcode.ipynb (outputs listings_{city}_zipcode.csv to Resources)
+
     - data_cleaning.ipynb (outputs cleaned_data_{city}_final.csv to Resources)
 
 This flow is the same for San Diego and Seattle, but for New York, we have hosted the zipcode csv
@@ -63,7 +65,7 @@ in AWS s3 because of file size considerations.
 Before we could fit our data to an ML model, we needed to engineer the features into appropriate formats.
 The cleaned datasets have both categorical as well as numerical feature data which needed to be dummied
 as well as scaled. Through a PCA analysis we also were able to discern the features which needed to be
-binned in order to reduce noise. Amenities, bathrooms, bedrooms, acccommodates, and minimum nights.
+binned in order to reduce noise. Amenities, bathrooms, bedrooms, and years in business.
 
 [(Back to top)](#table-of-contents)
 
@@ -80,9 +82,7 @@ performed best considering r2 and rMSE calculations.
 We also wanted to give the user insight into how revenue from a listing using our price predictor
 might compare to characteristically similar listings in their city. Therefore, we decided to build 
 a classifier model to predict whether a given price would generate yearly revenue above or below the
-50th percentile. In other words, will this price generate revenue that is above or below the median
-for the city. Random Forest classifier was the best performing model for this situation as seen through 
-good precision for '>50th' classification.
+50th percentile for the same amount of bedrooms. In other words, will this price generate revenue that is above or below the median for the city. Random Forest classifier was the best performing model for this situation as seen through good precision for '>50th' classification.
 
 ### Model Workflow
 
@@ -102,7 +102,7 @@ A worthwhile piece of information that was gained through this exploration is th
 check-in scores seem to influence Airbnb success the least out of all review types. Their feature 
 importance scores were consistently the lowest in all models.
 
-The notebook files dedicated to this exploration can be found in the “review_scores” of the Machine Learning directory.
+The notebook files dedicated to this exploration can be found in the “review_scores_ml” directory.
 
 [(Back to top)](#table-of-contents)
 
